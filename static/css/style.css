@@ -1,0 +1,14 @@
+body {
+    background-color: #07ddff0f;
+    color: steelblue;
+    width: 50%;
+    margin: 0 auto;
+}
+
+ul li {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
