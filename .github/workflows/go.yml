@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: priyagupta108/setup-go@test
+    - uses: priya-kinthali/setup-go@poc-build
 
     - name: Set up Go
       uses: actions/setup-go@v4
