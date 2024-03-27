@@ -1,0 +1,22 @@
+name: Reproduce Expired Key Issue
+
+on:
+  push:
+    branches: [ 463-signingkey ]
+ 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: 'v5.0.0'
+        repository: 'actions/setup-go'
+
+    - name: Run setup-go
+      run: |
+        node ./dist/index.js
