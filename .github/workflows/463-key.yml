@@ -17,6 +17,5 @@ jobs:
         ref: 'v5.0.0'
         repository: 'actions/setup-go'
 
-    - name: Run setup-go
-      run: |
-        node ./dist/index.js
+    - name: Run Go command
+      run: go version
