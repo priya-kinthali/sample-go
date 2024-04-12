@@ -1,21 +1,18 @@
-name: Reproduce Expired Key Issue
-
 on:
-  push:
-    branches: [ 463-signingkey ]
- 
+  push:   
+    branches:
+      - 454-testversion
+
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    name: Build on macOS 14 (M1)
+    runs-on: macos-14
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        ref: 'v5.0.0'
-        repository: 'actions/setup-go'
-
-    - name: Run Go command
-      run: go version
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+      - name: Check Go version
+        run: go version
+      - run: go build -o hello-world
+      - run: ./hello-world
