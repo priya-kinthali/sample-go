@@ -1,17 +1,16 @@
 name: Test Go cache
 
 on:
-  push:
-    branches:
-      - test-540
+  # push:
+  #   branches:
+  #     - test-540
   pull_request:
   workflow_dispatch:
-
 jobs:
-  test-go-version-latest:
+  test-go-version-specific:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-22.04, windows-2025, macos-15]
 
     runs-on: ${{ matrix.os }}
 
@@ -30,5 +29,3 @@ jobs:
 
       - name: Verify Go version
         run: go version
-
- 
