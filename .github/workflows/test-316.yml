@@ -1,4 +1,4 @@
-name: Test Go Version
+name: Test Go cache
 
 on:
   # push:
