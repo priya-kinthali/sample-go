@@ -1,9 +1,9 @@
 name: Test Go cache
 
 on:
-  push:
-    branches:
-      - test-540
+  # push:
+  #   branches:
+  #     - test-540
   pull_request:
   workflow_dispatch:
 
