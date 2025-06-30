@@ -5,12 +5,10 @@ on:
     branches:
       - test-540
   pull_request:
-    
   workflow_dispatch:
-    
 
 jobs:
-  test-go-version:
+  test-go-version-latest:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -22,12 +20,36 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Go
-        # uses: actions/setup-go@v5
-        uses: akv-platform/setup-go@restore-cache-only
+        uses: actions/setup-go@v5
+        # uses: akv-platform/setup-go@restore-cache-only
         with:
           go-version: 1.24
           check-latest: true
           cache-dependency-path: go.sum
-          restore-only: true 
+          # restore-only: true
+
+      - name: Verify Go version
+        run: go version
+
+  test-go-version-specific:
+    strategy:
+      matrix:
+        os: [ubuntu-22, windows-2019, macos-15]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        # uses: akv-platform/setup-go@restore-cache-only
+        with:
+          go-version: 1.24
+          check-latest: true
+          cache-dependency-path: go.sum
+          # restore-only: true
+
       - name: Verify Go version
         run: go version
