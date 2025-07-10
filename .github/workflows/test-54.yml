@@ -1,0 +1,31 @@
+name: Test Setup-Go PR 334 Outputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-setup-go-pr:
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Checkout this repo (your code)
+        uses: actions/checkout@v4
+
+      - name: Setup-Go ${{ matrix.runner }}
+        id: setup-go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+
+      - name: Show all setup-go outputs
+        run: |
+          echo "go-version: ${{ steps.setup-go.outputs.go-version }}"
+          echo "go-cache: ${{ steps.setup-go.outputs.go-cache }}"
+          echo "go-path: ${{ steps.setup-go.outputs.go-path }}"
+          echo "go-root: ${{ steps.setup-go.outputs.go-root }}"
+          echo "go-mod: ${{ steps.setup-go.outputs.go-mod }}"
+          echo "go-mod-cache: ${{ steps.setup-go.outputs.go-mod-cache }}"
+          echo "go-env: ${{ steps.setup-go.outputs.go-env }}"
+          echo "cache-hit: ${{ steps.setup-go.outputs.cache-hit }}"
