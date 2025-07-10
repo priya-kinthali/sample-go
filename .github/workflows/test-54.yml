@@ -1,6 +1,8 @@
 name: Test Setup-Go PR 334 Outputs
 
 on:
+  push:
+    branches: [ test-605 ]
   workflow_dispatch:
 
 jobs:
