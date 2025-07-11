@@ -9,8 +9,8 @@ jobs:
   test-setup-go-pr:
     strategy:
       matrix:
-        # runner: [ubuntu-latest, windows-latest, macos-latest]
-        runner: [windows-latest]
+        runner: [ubuntu-latest, windows-latest, macos-latest]
+        # runner: [windows-latest]
       fail-fast: false
 
     runs-on: ${{ matrix.runner }}
