@@ -9,8 +9,8 @@ jobs:
   test-setup-go-pr:
     strategy:
       matrix:
-        # runner: [ubuntu-latest, windows-latest, macos-latest]
-        runner: [ubuntu-latest]
+        runner: [ubuntu-latest, windows-latest, macos-latest]
+        # runner: [ubuntu-latest]
 
     runs-on: ${{ matrix.runner }}
     steps:
@@ -23,9 +23,13 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.21'
-      - name: go env
-        run: |
-            echo "GOCACHE=$(go env GOCACHE)" >> $GITHUB_ENV
+      - name: Cache Go build cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.GOCACHE }}
+          key: go-cache-test-${{ runner.os }}-${{ hashFiles('**/*.mod') }}
+          restore-keys: |
+            go-cache-${{ runner.os }}
 
       # - name: Show all setup-go outputs
       #   run: |
