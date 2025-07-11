@@ -13,14 +13,14 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout this repo (your code)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Setup-Go ${{ matrix.runner }}
         id: setup-go
         # uses: lucacome/setup-go@add-env
         uses: actions/setup-go@v2
         with:
-          go-version: '1.21'
+          go-version: '1.14'
 
       - name: Show all setup-go outputs
         run: |
