@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout this repo (your code)
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup-Go ${{ matrix.runner }}
         id: setup-go
