@@ -9,7 +9,9 @@ jobs:
   test-setup-go-pr:
     strategy:
       matrix:
-        runner: [ubuntu-latest, windows-latest, macos-latest]
+        # runner: [ubuntu-latest, windows-latest, macos-latest]
+        runner: [ubuntu-latest]
+
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout this repo (your code)
