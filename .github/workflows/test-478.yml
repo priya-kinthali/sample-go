@@ -26,5 +26,4 @@ jobs:
           #   tools/go.sum
           #   **/*.sum
 
-      - name: Run Go application
-        run: go run main.go
+      - run: go version
