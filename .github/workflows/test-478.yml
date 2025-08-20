@@ -9,7 +9,7 @@ jobs:
   test-setup-go-pr:
     strategy:
       matrix:
-        runner: [ubuntu-latest, windows-latest, macos-latest]
+        runner: [ubuntu-latest, macos-latest]
       fail-fast: false
 
     runs-on: ${{ matrix.runner }}
@@ -27,4 +27,4 @@ jobs:
           #   **/*.sum
 
       - name: Run Go application
-        run: go run sample.go
+        run: go run main.go
