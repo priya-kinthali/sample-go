@@ -9,7 +9,7 @@ jobs:
   test-setup-go-pr:
     strategy:
       matrix:
-        runner: [ubuntu-latest, windows-latest, macos-latest, macos-latest-large]
+        runner: [ubuntu-latest, windows-latest, macos-latest, macos-13]
         # runner: [windows-latest]
       fail-fast: false
 
