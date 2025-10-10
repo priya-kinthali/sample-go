@@ -1,0 +1,27 @@
+name: Test Setup-Go PR 334 Outputs
+
+on:
+  push:
+    branches: [ test-375-fr ]
+  workflow_dispatch:
+
+jobs:
+  test-setup-go-pr:
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, windows-latest, macos-latest, macos-latest-large]
+        # runner: [windows-latest]
+      fail-fast: false
+
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v5
+      - name: Setup-Go ${{ matrix.runner }}
+        uses: priya-kinthali/setup-go@tool-version
+        # uses: actions/setup-go@v6
+        with:
+          go-version-file: '.tool-versions'
+          cache: false
+      - name: Test Go installation
+        run: go version
