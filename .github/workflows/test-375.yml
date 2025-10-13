@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v5
-      - name: Setup-Go ${{ matrix.runner }}
+      - name: Setup-Go
         uses: priya-kinthali/setup-go@tool-version
         # uses: actions/setup-go@v6
         with:
