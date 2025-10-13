@@ -19,7 +19,7 @@ jobs:
       - name: Setup-Go
         uses: actions/setup-go@v6
         with:
-          go-version: 'stable'
+          go-version: 'oldstable'
           cache: false
       - name: Test Go installation
         run: go version
