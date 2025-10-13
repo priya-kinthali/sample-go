@@ -1,8 +1,8 @@
 name: Test Setup-Go PR 334 Outputs
 
 on:
-  push:
-    branches: [ test-375-fr ]
+  # push:
+  #   branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
@@ -22,6 +22,6 @@ jobs:
         # uses: actions/setup-go@v6
         with:
           go-version-file: '.tool-versions'
-          cache: false
+          cache-dependency-path:  '**/go.sum'
       - name: Test Go installation
         run: go version
