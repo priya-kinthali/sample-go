@@ -1,8 +1,8 @@
 name: Test Setup-Go PR 334 Outputs
 
 on:
-  push:
-    branches: [ test-375-fr ]
+  # push:
+  #   branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
