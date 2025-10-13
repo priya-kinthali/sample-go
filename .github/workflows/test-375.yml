@@ -22,6 +22,7 @@ jobs:
         # uses: actions/setup-go@v6
         with:
           go-version-file: '.tool-versions'
+          check-latest: true
           cache: false
       - name: Test Go installation
         run: go version
