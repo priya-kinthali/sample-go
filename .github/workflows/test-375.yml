@@ -22,6 +22,6 @@ jobs:
         # uses: actions/setup-go@v6
         with:
           go-version-file: '.tool-versions'
-          cache-dependency-path:  'go.sum'
+          # cache-dependency-path:  'go.sum'
       - name: Test Go installation
         run: go version
