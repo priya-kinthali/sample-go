@@ -21,9 +21,9 @@ jobs:
         # uses: priya-kinthali/setup-go@tool-version
         uses: actions/setup-go@v6
         with:
-          # go-version-file: '.tool-versions'
+          go-version-file: '.tool-versions'
           # cache-dependency-path:  'go.sum'
-          go-version: 'v1.25'
+          # go-version: 'v1.25'
           cache: false
       - name: Test Go installation
         run: go version
