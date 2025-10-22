@@ -1,7 +1,7 @@
 name: Test Setup-Go with main
 on:
-  # push:
-  #   branches: [ test-375-fr ]
+  push:
+    branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup-Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.20.7 || >=1.21.1 <2.0.0'
+          go-version: '1.18.0 - 1.20.7'
           # cache-dependency-path:  'go.sum'
           cache: false
 
