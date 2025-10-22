@@ -24,6 +24,7 @@ jobs:
           go-version-file: '.tool-versions'
           # cache-dependency-path:  'go.sum'
           # go-version: 'v1.25'
+          check-latest: true
           cache: false
       - name: Test Go installation
         run: go version
