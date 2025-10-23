@@ -13,8 +13,8 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: 1.25.1
-          architecture: 'x32'
+          go-version: 1.25.3
+          architecture: 'arm64'
           cache: false
 
       - name: Install Dependencies
