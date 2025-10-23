@@ -1,6 +1,6 @@
 module main
 
-toolchain 1.25-rc.3
+toolchain go1.25rc3
 
 require (
 	github.com/gorilla/mux v1.8.1
