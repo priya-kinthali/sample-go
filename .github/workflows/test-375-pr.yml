@@ -18,8 +18,8 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v5
       - name: Setup-Go
-        uses: priya-kinthali/setup-go@tool-version
-        # uses: actions/setup-go@v6
+        # uses: priya-kinthali/setup-go@tool-version
+        uses: actions/setup-go@v6
         with:
           go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
