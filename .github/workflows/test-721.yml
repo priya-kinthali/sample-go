@@ -33,7 +33,7 @@ jobs:
         with:
           # go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
-          go-version: 'oldstable'
+          go-version: 'stable'
           go-download-base-url: 'https://aka.ms/golang/release/latest'
           # check-latest: true
           cache: false
