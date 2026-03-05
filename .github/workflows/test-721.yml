@@ -1,0 +1,31 @@
+name: Test Setup-Go PR 334 Outputs
+
+on:
+  push:
+    branches: [ test-375-fr ]
+  workflow_dispatch:
+
+jobs:
+  test-setup-go-pr:
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, ubuntu-22.04, windows-latest, windows-11-arm, macos-latest, macos-15-intel, ubuntu-24.04-arm]
+        # runner: [windows-latest]
+      fail-fast: false
+
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v6
+      - name: Setup-Go
+        uses: gdams/setup-go@msgo
+        # uses: actions/setup-go@v6
+        with:
+          # go-version-file: '.go-version'
+          # cache-dependency-path:  'go.sum'
+          go-version: '1.25'
+          go-download-base-url: 'https://aka.ms/golang/release/latest'
+          # check-latest: true
+          cache: false
+      - name: Test Go installation
+        run: go version
