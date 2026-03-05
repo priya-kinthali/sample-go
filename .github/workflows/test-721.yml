@@ -30,12 +30,14 @@ jobs:
       - name: Setup-Go
         uses: gdams/setup-go@msgo
         # uses: actions/setup-go@v6
+        id: go124
         with:
           go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
           # go-version: 'stable'
-          go-download-base-url: 'go'
+          go-download-base-url: 'https://aka.ms/golang/release/latest'
           # check-latest: true
           cache: false
+      - run: echo "Installed Go version- ${{ steps.go124.outputs.go-version }}"
       - name: Test Go installation
         run: go version
