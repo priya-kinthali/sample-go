@@ -34,7 +34,7 @@ jobs:
           go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
           # go-version: 'stable'
-          go-download-base-url: 'any string'
+          go-download-base-url: 'go'
           # check-latest: true
           cache: false
       - name: Test Go installation
