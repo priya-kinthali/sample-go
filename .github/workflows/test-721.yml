@@ -18,13 +18,13 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v6
       - name: Setup-Go
-        uses: gdams/setup-go@msgo
-        # uses: actions/setup-go@v6
+        # uses: gdams/setup-go@msgo
+        uses: actions/setup-go@v6
         with:
           # go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
           go-version: '1.25'
-          go-download-base-url: 'https://aka.ms/golang/release/latest'
+          # go-download-base-url: 'https://aka.ms/golang/release/latest'
           # check-latest: true
           cache: false
       - name: Test Go installation
