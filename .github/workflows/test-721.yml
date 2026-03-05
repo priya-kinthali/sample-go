@@ -32,9 +32,9 @@ jobs:
         # uses: actions/setup-go@v6
         id: go124
         with:
-          go-version-file: '.go-version'
+          # go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
-          # go-version: 'stable'
+          go-version: '^1.25.0'
           go-download-base-url: 'https://aka.ms/golang/release/latest'
           # check-latest: true
           cache: false
