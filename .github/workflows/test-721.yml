@@ -34,9 +34,9 @@ jobs:
         with:
           go-version-file: '.go-version'
           # cache-dependency-path:  'go.sum'
-          go-download-base-url: 'https://aka.ms/golang/release/latest?extra=param'
+          go-download-base-url: 'https://aka.ms/golang/release/latest'
           # check-latest: true
-          cache: false
+          cache: true
       - run: echo "Installed Go version- ${{ steps.go124.outputs.go-version }}"
       - name: Test Go installation
         run: go version
