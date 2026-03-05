@@ -17,6 +17,16 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v6
+      - name: Clear hosted tool cache
+        shell: bash
+        run: |
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            sudo rm -rf /opt/hostedtoolcache
+          elif [[ "$RUNNER_OS" == "macOS" ]]; then
+            sudo rm -rf /Users/runner/hostedtoolcache
+          elif [[ "$RUNNER_OS" == "Windows" ]]; then
+            powershell -Command "Remove-Item -Recurse -Force C:\hostedtoolcache"
+          fi
       - name: Setup-Go
         # uses: gdams/setup-go@msgo
         uses: actions/setup-go@v6
