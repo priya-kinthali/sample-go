@@ -1,8 +1,8 @@
 name: test-workaround-actions-cache
 
 on:
-  # push:
-  #   branches: [ test-375-fr ]
+  push:
+    branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
@@ -13,14 +13,9 @@ jobs:
       - uses: actions/setup-go@v7
         with:
           go-version: '1.25.4'
-          cache: false
-      - uses: actions/cache@v6
-        with:
-          path: |
+          cache-dependency-path: |
             go.mod
-          key: ${{ github.job }}-${{ runner.os }}-go-${{ hashFiles('**/go.mod') }}
-          restore-keys: |
-            ${{ github.job }}-${{ runner.os }}-go-
+            .github/cache-buster-${{ github.job }}
       - name: Test Go installation
         run: go version
       - name: Install Dependencies
@@ -34,14 +29,9 @@ jobs:
       - uses: actions/setup-go@v7
         with:
           go-version: '1.25.4'
-          cache: false
-      - uses: actions/cache@v6
-        with:
-          path: |
+          cache-dependency-path: |
             go.mod
-          key: ${{ github.job }}-${{ runner.os }}-go-${{ hashFiles('**/go.mod') }}
-          restore-keys: |
-            ${{ github.job }}-${{ runner.os }}-go-
+            .github/cache-buster-${{ github.job }}
       - name: Test Go installation
         run: go version
       - name: Install Dependencies
