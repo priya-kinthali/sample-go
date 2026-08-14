@@ -1,8 +1,8 @@
 name: test-workaround-actions-cache
 
 on:
-  push:
-    branches: [ test-375-fr ]
+  # push:
+  #   branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
