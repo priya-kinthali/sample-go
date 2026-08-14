@@ -1,7 +1,7 @@
 name: Test Setup-Go with main
 on:
-  push:
-    branches: [ test-375-fr ]
+  # push:
+  #   branches: [ test-375-fr ]
   workflow_dispatch:
 
 jobs:
