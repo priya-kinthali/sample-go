@@ -7,15 +7,15 @@ on:
 jobs:
   proof:
     runs-on: ubuntu-latest
-    env:
-      GOEXPERIMENT: jsonv2      # <- the only thing needed
+    # env:
+    #   GOEXPERIMENT: jsonv2      # <- the only thing needed
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-go@v7
         with:
           go-version: '1.25.x'  # <- plain downloaded toolchain, not rebuilt
           cache: false
-      - run: go env GOEXPERIMENT          # prints: jsonv2
+      # - run: go env GOEXPERIMENT          # prints: jsonv2
       - run: |
           cat > main.go <<'EOF'
           package main
